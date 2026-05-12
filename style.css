@@ -32,6 +32,12 @@ body {
 
 /* ===== Header ===== */
 
+.header-image {
+  display: block;
+  width: 120px;
+  margin: 0 auto 12px;
+}
+
 .app-header {
   margin-bottom: 24px;
 }

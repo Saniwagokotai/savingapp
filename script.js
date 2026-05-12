@@ -133,13 +133,23 @@ if (savedHistory) {
 // ===== 表示更新 =====
 
 function updateUI() {
+  goalDisplay.textContent = `${Number(goal).toLocaleString()} 円`;
 
-  totalAmount.textContent = `${total.toLocaleString()} 円`;
+  totalAmount.textContent = `${Number(total).toLocaleString()} 円`;
 
   const remaining = goal - total;
 
-  remainingAmount.textContent = `${remaining.toLocaleString()} 円`;
+  remainingAmount.textContent = `${Number(remaining).toLocaleString()} 円`;
 
+  let percent = 0;
+
+  if (goal > 0) {
+    percent = Math.floor((total / goal) * 100);
+  }
+
+  progressPercent.textContent = `${percent}%`;
+  progressFill.style.width = `${percent}%`;
+}
   // 達成率
 
   let percent = 0;

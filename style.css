@@ -1,0 +1,374 @@
+/* ===== Reset ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+
+body {
+  background: #fffaf4;
+
+  font-family: Arial, sans-serif;
+
+  color: #5f5f5f;
+
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  padding: 24px 16px;
+}
+
+/* ===== App ===== */
+
+.app-shell {
+  width: 100%;
+  max-width: 430px;
+}
+
+/* ===== Header ===== */
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.hero-icon {
+  font-size: 4rem;
+
+  text-align: center;
+
+  margin-bottom: 12px;
+}
+
+.app-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+
+  color: #f4b942;
+
+  margin-bottom: 8px;
+
+  text-align: center;
+}
+
+.description {
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+
+  color: #8b8b8b;
+
+  text-align: center;
+}
+
+/* ===== Card ===== */
+
+.card {
+  background: #ffffff;
+
+  border-radius: 28px;
+
+  padding: 22px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Goal Card ===== */
+
+.goal-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.goal-display span {
+  color: #7f7f7f;
+
+  font-size: 0.95rem;
+}
+
+.goal-display strong {
+  color: #ffb84d;
+
+  font-size: 1.2rem;
+}
+
+/* ===== Buttons ===== */
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Main Button */
+
+#saveButton,
+#setGoalButton {
+  width: 100%;
+
+  background: #ffd86b;
+
+  color: #5a4a1a;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  padding: 14px;
+
+  border-radius: 18px;
+}
+
+#saveButton:hover,
+#setGoalButton:hover {
+  background: #ffcf4d;
+}
+
+/* Secondary Button */
+
+.secondary-button {
+  width: 100%;
+
+  background: #c8f5df;
+
+  color: #3f7d5c;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  padding: 12px;
+
+  border-radius: 16px;
+}
+
+.secondary-button:hover {
+  background: #b3eed2;
+}
+
+/* ===== Goal Edit ===== */
+
+.goal-edit-area {
+  margin-top: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== Input ===== */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+
+  color: #6f6f6f;
+}
+
+.input-group input,
+.goal-edit-area input {
+  border: none;
+
+  background: #fff7dc;
+
+  border-radius: 18px;
+
+  padding: 16px;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  color: #666666;
+
+  transition: 0.2s;
+}
+
+.input-group input:focus,
+.goal-edit-area input:focus {
+  background: #fff1b8;
+
+  transform: scale(1.01);
+}
+
+/* ===== Button Area ===== */
+
+.button-area {
+  margin-top: 18px;
+}
+
+/* ===== Progress ===== */
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.progress-text span {
+  color: #7f7f7f;
+}
+
+.progress-text strong {
+  color: #ff8eb5;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 18px;
+
+  background: #f4f4f4;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #ffeef5,
+    #ffb7d5
+  );
+
+  border-radius: 999px;
+
+  transition: width 0.4s ease;
+}
+
+/* ===== Section Title ===== */
+
+.section-title {
+  font-size: 1.2rem;
+
+  color: #ffb84d;
+
+  margin-bottom: 18px;
+}
+
+/* ===== Result ===== */
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row span {
+  color: #7d7d7d;
+}
+
+.result-row strong {
+  color: #ff9f1c;
+
+  font-size: 1.1rem;
+}
+
+/* ===== History ===== */
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.empty-message {
+  color: #999999;
+
+  text-align: center;
+
+  padding: 12px 0;
+}
+
+/* ===== Example History Item ===== */
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff9ef;
+
+  padding: 14px 16px;
+
+  border-radius: 16px;
+}
+
+.history-date {
+  color: #888888;
+
+  font-size: 0.9rem;
+}
+
+.history-value {
+  color: #ff8eb5;
+
+  font-weight: 700;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 20px 12px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+}
+
+.plus-value {
+  color: #7ad9b6;
+}
+
+.minus-value {
+  color: #ff9bb8;
+}

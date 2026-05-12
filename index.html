@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>貯金アプリ</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="app-shell">
+
+    <!-- Header -->
+    <header class="app-header">
+
+      <div class="hero-icon">
+        💰
+      </div>
+
+      <h1 class="app-title">
+        貯金アプリ
+      </h1>
+
+      <p class="description">
+        目標金額と今日の貯金額を入力して、残り金額を確認します。
+      </p>
+
+    </header>
+
+    <!-- Goal Card -->
+    <section class="card goal-card">
+
+      <div class="goal-display">
+        <span>目標金額</span>
+        <strong id="goalDisplay">0 円</strong>
+      </div>
+
+      <button id="editGoalButton" class="secondary-button">
+        目標を変更する
+      </button>
+
+      <div id="goalEditArea" class="goal-edit-area hidden">
+
+        <input
+          id="goalAmount"
+          type="number"
+          min="0"
+          step="100"
+          placeholder="500 または -300"
+        />
+        <button id="setGoalButton">
+          設定する
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- Progress Card -->
+    <section class="card progress-card">
+
+      <div class="progress-text">
+        <span>達成率</span>
+        <strong id="progressPercent">0%</strong>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+
+    </section>
+
+    <!-- Input Card -->
+    <section class="card">
+
+      <div class="input-group">
+
+        <label for="todayAmount">
+          今日貯めた金額
+        </label>
+
+        <input
+          id="todayAmount"
+          type="number"
+          min="0"
+          step="100"
+          placeholder="0"
+        />
+
+      </div>
+
+      <div class="button-area">
+
+        <button id="saveButton">
+          保存する
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- Result Card -->
+    <section class="card result-card">
+
+      <h2 class="section-title">
+        貯金状況
+      </h2>
+
+      <div class="result-row">
+        <span>現在の合計</span>
+        <strong id="totalAmount">0 円</strong>
+      </div>
+
+      <div class="result-row">
+        <span>目標まで</span>
+        <strong id="remainingAmount">0 円</strong>
+      </div>
+
+    </section>
+
+    <!-- History Card -->
+    <section class="card history-card">
+
+      <h2 class="section-title">
+        貯金記録
+      </h2>
+
+      <div id="historyList" class="history-list">
+
+        <p class="empty-message">
+          まだ記録がありません
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

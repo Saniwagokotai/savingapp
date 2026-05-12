@@ -1,0 +1,15 @@
+{
+  "name": "ちょ",
+  "short_name": "ちょ",
+  "start_url": "/savingapp/",
+  "display": "standalone",
+  "background_color": "#fffaf4",
+  "theme_color": "#ffd86b",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

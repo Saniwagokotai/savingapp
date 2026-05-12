@@ -41,7 +41,7 @@ setGoalButton.addEventListener("click", () => {
 
   localStorage.setItem("goal", goal);
 
-  goalDisplay.textContent = `${goal} 円`;
+  goalDisplay.textContent = `${goal.toLocaleString()} 円`;
 
   updateUI();
 
@@ -114,7 +114,7 @@ function updateHistory() {
     </div>
 
     <strong class="${valueClass}">
-      ${sign}${record.amount} 円
+      ${sign}${record.amount.toLocaleString()} 円
     </strong>
     `;
 
@@ -134,11 +134,11 @@ if (savedHistory) {
 
 function updateUI() {
 
-  totalAmount.textContent = `${total} 円`;
+  totalAmount.textContent = `${total.toLocaleString()} 円`;
 
   const remaining = goal - total;
 
-  remainingAmount.textContent = `${remaining} 円`;
+  remainingAmount.textContent = `${remaining.toLocaleString()} 円`;
 
   // 達成率
 
@@ -167,7 +167,7 @@ if (savedTotal) {
   total = Number(savedTotal);
 }
 
-goalDisplay.textContent = `${goal} 円`;
+goalDisplay.textContent = `${goal.toLocaleString()} 円`;
 
 updateUI();
 

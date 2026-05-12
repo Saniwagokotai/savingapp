@@ -35,9 +35,9 @@ body {
 .header-image {
   display: block;
 
-  width: 260px;
+  width: 180px;
 
-  margin: 0 auto
+  margin: 0 auto 4px;
 }
 .app-header {
   margin-bottom: 24px;

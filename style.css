@@ -35,12 +35,14 @@ body {
 .header-image {
   display: block;
 
-  width: 100px;
+  width: 140px;
+  height: auto;
 
-  margin:
-    0 auto 12px;
+  object-fit: contain;
 
-  transform: translateX(-10px);
+  margin: -10px auto 0;
+
+  transform: translateX(-12px);
 }
 
 .app-header {

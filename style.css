@@ -34,8 +34,12 @@ body {
 
 .header-image {
   display: block;
-  width: 120px;
-  margin: 0 auto 12px;
+
+  width: 280px;
+
+  margin: -20px auto 10px;
+
+  opacity: 0.95;
 }
 
 .app-header {

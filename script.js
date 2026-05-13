@@ -24,27 +24,24 @@ let goal = 0;
 let total = 0;
 let history = [];
 
+
 // ===== 目標編集を開く =====
 
 editGoalButton.addEventListener("click", () => {
-
   goalEditArea.classList.toggle("hidden");
-
 });
 
 
 // ===== 目標金額を設定 =====
 
 setGoalButton.addEventListener("click", () => {
-
   goal = Number(goalAmountInput.value);
 
   localStorage.setItem("goal", goal);
 
-  goalDisplay.textContent = `${goal.toLocaleString()} 円`;
+  goalAmountInput.value = "";
 
   updateUI();
-
 });
 
 
@@ -52,6 +49,10 @@ setGoalButton.addEventListener("click", () => {
 
 saveButton.addEventListener("click", () => {
   const todaySaving = Number(todayAmountInput.value);
+
+  if (todayAmountInput.value === "") {
+    return;
+  }
 
   total += todaySaving;
 
@@ -77,6 +78,9 @@ saveButton.addEventListener("click", () => {
   updateHistory();
 });
 
+
+// ===== 履歴更新 =====
+
 function updateHistory() {
   const historyList = document.getElementById("historyList");
 
@@ -92,41 +96,33 @@ function updateHistory() {
   }
 
   history.forEach((record) => {
+    const item = document.createElement("div");
+    item.classList.add("history-item");
 
-  const item = document.createElement("div");
-  item.classList.add("history-item");
+    const valueClass =
+      record.amount >= 0
+        ? "plus-value"
+        : "minus-value";
 
-  const valueClass =
-    record.amount >= 0
-      ? "plus-value"
-      : "minus-value";
+    const sign =
+      record.amount >= 0
+        ? "+"
+        : "";
 
-  const sign =
-    record.amount >= 0
-      ? "+"
-      : "";
+    item.innerHTML = `
+      <div>
+        <p class="history-date">
+          ${record.date} ${record.time}
+        </p>
+      </div>
 
-  item.innerHTML = `
-    <div>
-      <p class="history-date">
-        ${record.date} ${record.time}
-      </p>
-    </div>
-
-    <strong class="${valueClass}">
-      ${sign}${record.amount.toLocaleString()} 円
-    </strong>
+      <strong class="${valueClass}">
+        ${sign}${Number(record.amount).toLocaleString()} 円
+      </strong>
     `;
 
     historyList.appendChild(item);
-
   });
-}
-
-const savedHistory = localStorage.getItem("history");
-
-if (savedHistory) {
-  history = JSON.parse(savedHistory);
 }
 
 
@@ -150,24 +146,13 @@ function updateUI() {
   progressPercent.textContent = `${percent}%`;
   progressFill.style.width = `${percent}%`;
 }
-  // 達成率
 
-  let percent = 0;
-
-  if (goal > 0) {
-    percent = Math.floor((total / goal) * 100);
-  }
-
-  progressPercent.textContent = `${percent}%`;
-
-  progressFill.style.width = `${percent}%`;
-
-}
 
 // ===== 保存データを読み込む =====
 
 const savedGoal = localStorage.getItem("goal");
 const savedTotal = localStorage.getItem("total");
+const savedHistory = localStorage.getItem("history");
 
 if (savedGoal) {
   goal = Number(savedGoal);
@@ -177,8 +162,9 @@ if (savedTotal) {
   total = Number(savedTotal);
 }
 
-goalDisplay.textContent = `${goal.toLocaleString()} 円`;
+if (savedHistory) {
+  history = JSON.parse(savedHistory);
+}
 
 updateUI();
-
 updateHistory();

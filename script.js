@@ -1,5 +1,6 @@
 // ===== HTMLの要素を取得 =====
 
+
 const goalDisplay = document.getElementById("goalDisplay");
 
 const totalAmount = document.getElementById("totalAmount");
@@ -20,6 +21,7 @@ const goalEditArea = document.getElementById("goalEditArea");
 
 // ===== データ =====
 
+
 let goal = 0;
 let total = 0;
 let history = [];
@@ -27,12 +29,14 @@ let history = [];
 
 // ===== 目標編集を開く =====
 
+
 editGoalButton.addEventListener("click", () => {
   goalEditArea.classList.toggle("hidden");
 });
 
 
 // ===== 目標金額を設定 =====
+
 
 setGoalButton.addEventListener("click", () => {
   goal = Number(goalAmountInput.value);
@@ -46,6 +50,7 @@ setGoalButton.addEventListener("click", () => {
 
 
 // ===== 今日の貯金を追加 =====
+
 
 saveButton.addEventListener("click", () => {
   const todaySaving = Number(todayAmountInput.value);
@@ -80,6 +85,7 @@ saveButton.addEventListener("click", () => {
 
 
 // ===== 履歴更新 =====
+
 
 function updateHistory() {
   const historyList = document.getElementById("historyList");
@@ -128,6 +134,7 @@ function updateHistory() {
 
 // ===== 表示更新 =====
 
+
 function updateUI() {
   goalDisplay.textContent = `${Number(goal).toLocaleString()} 円`;
 
@@ -149,6 +156,7 @@ function updateUI() {
 
 
 // ===== 保存データを読み込む =====
+
 
 const savedGoal = localStorage.getItem("goal");
 const savedTotal = localStorage.getItem("total");
